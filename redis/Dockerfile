@@ -10,13 +10,13 @@ ENV \
   DEBIAN_FRONTEND=noninteractive \ 
   TERM=xterm-color
 # Install Redis.
-#RUN \
-#  apt-get update && apt-get install -y curl && \
-#  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 ADD http://download.redis.io/redis-stable.tar.gz /tmp/redis-stable.tar.gz
 RUN \
+  apt-get update && \
+  apt-get install -y  --no-install-recommends wget build-essential && \
+  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   cd /tmp && \
-  curl -O http://download.redis.io/redis-stable.tar.gz && \
+  wget http://download.redis.io/redis-stable.tar.gz && \
   tar xvzf redis-stable.tar.gz && \  
   cd redis-stable && \
   make && \
@@ -28,7 +28,8 @@ RUN \
   sed -i 's/^\(bind .*\)$/# \1/' /etc/redis/redis.conf && \
   sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf && \
   sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf && \
-  sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
+  sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf && \
+  rm -rf /tmp/*
 
 # Define mountable directories.
 VOLUME ["/data"]
