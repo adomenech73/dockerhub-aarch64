@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This are the requirements for the strongloop backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "strongloop",
+    "api",
+    "backend"
+  ],
+  "author": "adomenech@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "strongloop": "^5.0.1"
+  }
+}
