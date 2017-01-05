@@ -2,7 +2,10 @@
 # Build: docker build -t mongodb .
 # Run: docker run -d -p 27017:27017 --name mongodb_box mongodb
 #
+# FROM 192.168.1.102/library/aarch64-ubuntu:xenial
 FROM aarch64/ubuntu:xenial
+MAINTAINER Albert Domenech <adomenech@gmail.com>
+
 #RUN  echo 'Acquire::http { Proxy "http://104.155.93.110:3142"; };' >> /etc/apt/apt.conf.d/01proxy
 MAINTAINER Albert Domenech (adomenech@gmail.com)
 ENV \

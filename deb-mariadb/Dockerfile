@@ -2,8 +2,11 @@
 # Build: docker build -t mariadb .
 # Run: docker run -d -p 3306:3306 --name mariadb_box mariadb
 #
+
+# FROM 192.168.1.102/library/aarch64-debian:jessie
 FROM aarch64/debian:jessie
-MAINTAINER Albert Domenech (adomenech@gmail.com)
+MAINTAINER Albert Domenech <adomenech@gmail.com>
+
 #RUN  echo 'Acquire::http { Proxy "http://192.168.1.145:3142"; };' >> /etc/apt/apt.conf.d/01proxy
 ENV \
 	DEBIAN_FRONTEND=noninteractive \ 

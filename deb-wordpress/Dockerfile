@@ -1,4 +1,7 @@
-FROM debian:jessie
+# FROM 192.168.1.102/library/aarch64-debian:jessie
+FROM aarch64/debian:jessie
+MAINTAINER Albert Domenech <adomenech@gmail.com>
+
 #RUN  echo 'Acquire::http { Proxy "http://aptcacherng:3142"; };' >> /etc/apt/apt.conf.d/01proxy
 ENV \
 	DEBIAN_FRONTEND=noninteractive \ 

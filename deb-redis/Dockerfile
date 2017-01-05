@@ -3,8 +3,9 @@
 # https://github.com/adomenech73/dockerhub-aarch64/redis
 #
 
-# Pull base image.
+# FROM 192.168.1.102/library/aarch64-debian:jessie
 FROM aarch64/debian:jessie
+MAINTAINER Albert Domenech <adomenech@gmail.com>
 
 ENV \
   DEBIAN_FRONTEND=noninteractive \ 

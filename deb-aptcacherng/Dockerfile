@@ -7,6 +7,8 @@
 #
 # based on the work of: SvenDowideit@docker.com
 #
+
+# FROM 192.168.1.102/library/aarch64-debian:jessie
 FROM        aarch64/debian:jessie
 MAINTAINER  adomenech@gmail.com
 

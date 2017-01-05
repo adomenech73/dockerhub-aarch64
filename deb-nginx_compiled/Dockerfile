@@ -1,4 +1,6 @@
+# FROM 192.168.1.102/library/aarch64-debian:jessie
 FROM debian:jessie
+MAINTAINER Albert Domenech <adomenech@gmail.com>
 #RUN  echo 'Acquire::http { Proxy "http://aptcacherng:3142"; };' >> /etc/apt/apt.conf.d/01proxy
 
 # Set environment. 

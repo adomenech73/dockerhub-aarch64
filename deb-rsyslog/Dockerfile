@@ -2,8 +2,10 @@
 # Build: docker build -t rsyslog .
 # Run: docker run -d -p 514:514/udp --name rsyslog_box rsyslog
 #
+
+# FROM 192.168.1.102/library/aarch64-debian:jessie
 FROM aarch64/debian:jessie
-MAINTAINER Albert Domenech (adomenech@gmail.com)
+MAINTAINER Albert Domenech <adomenech@gmail.com>
 ENV \
 	DEBIAN_FRONTEND=noninteractive \ 
 	TERM=xterm-color

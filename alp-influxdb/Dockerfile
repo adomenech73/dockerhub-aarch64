@@ -1,4 +1,6 @@
-FROM 192.168.1.102/library/aarch64-alpine:edge
+#FROM 192.168.1.102/library/aarch64-alpine:edge
+FROM aarch64/alpine:edge
+MAINTAINER Albert Domenech <adomenech@gmail.com>
 
 ENV INFLUXDB_VERSION 1.1.0~f715692
 COPY influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz /influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz
@@ -19,4 +21,4 @@ VOLUME /var/lib/influxdb
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["influxd"]
+#CMD ["influxd"]

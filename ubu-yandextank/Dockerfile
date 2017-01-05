@@ -1,6 +1,8 @@
-FROM ubuntu:14.04
+# FROM 192.168.1.102/library/aarch64-ubuntu:trusty
+FROM aarch64/ubuntu:14.04
+MAINTAINER Albert Domenech <adomenech@gmail.com>
+
 #RUN  echo 'Acquire::http { Proxy "http://104.155.93.110:3142"; };' >> /etc/apt/apt.conf.d/01proxy
-MAINTAINER Albert Domenech (adomenech@gmail.com)
 # http://yandextank.readthedocs.org/en/latest/install.html
 ENV \
 	DEBIAN_FRONTEND=noninteractive \ 
