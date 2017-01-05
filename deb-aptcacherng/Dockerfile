@@ -10,7 +10,7 @@
 
 # FROM 192.168.1.102/library/aarch64-debian:jessie
 FROM        aarch64/debian:jessie
-MAINTAINER  adomenech@gmail.com
+MAINTAINER  Albert Domenech <adomenech@gmail.com>
 
 VOLUME      ["/var/cache/apt-cacher-ng"]
 RUN     apt-get update && apt-get install -y apt-cacher-ng && \
