@@ -18,11 +18,19 @@ go get -d github.com/google/cadvisor
 godep go build --ldflags '-extldflags "-static"' github.com/google/cadvisor
 ```
 
+To simplificate this compilation I created a new Dockerfile in builder dir and a build.sh script that must be called on a aarch64 system, in my case on a Pine64 board.
+
+```
+./build.sh
+```
+
 ## build image
+
 ´´´
 docker build -t cadvisor-aarch64 .
 ´´´
 ## run image
+
 ´´´
 docker run \
   --volume=/:/rootfs:ro \
