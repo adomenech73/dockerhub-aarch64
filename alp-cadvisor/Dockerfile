@@ -1,5 +1,5 @@
 #FROM 192.168.1.102/library/aarch64-alpine:edge
-aarch64/alpine:edge
+FROM aarch64/alpine:edge
 MAINTAINER Albert Domenech <adomenech@gmail.com>
 
 RUN apk --no-cache add ca-certificates device-mapper && \

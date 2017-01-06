@@ -4,7 +4,7 @@ This is a 34Mb aarch64 alpine image where is loaded a previously compiled binary
 
 Because the Alpine C library is based in uClibc / musl it can get problems linking the library with dynamic compilation as happens to be with cAdvisor.
 
-The diference between this and the oficial [cadvisor image](https://hub.docker.com/r/google/cadvisor/) is that in this case we don't rely on @sgerrand glibc compatibility layer package, as we don't have offial aarch64 releases, instead we relay on a staticaly compile the binary, that we can produce like:
+The diference between this and the oficial [cadvisor image](https://hub.docker.com/r/google/cadvisor/) is that in this case we don't rely on @sgerrand glibc compatibility layer package, as we don't have offial aarch64 releases, instead we relay on a staticaly compiled binary, that we can produce locally like:
 
 ```
 export GOPATH=~/src/go
@@ -18,11 +18,13 @@ go get -d github.com/google/cadvisor
 godep go build --ldflags '-extldflags "-static"' github.com/google/cadvisor
 ```
 
-To simplificate this compilation I created a new Dockerfile in builder dir and a build.sh script that must be called on a aarch64 system, in my case on a Pine64 board.
+Or to simplificate we can use ```build.sh``` script:
 
 ```
 ./build.sh
 ```
+
+After new binary is created it's possible to generate Docker image and execute containers based on it.
 
 ## build image
 
@@ -40,5 +42,5 @@ docker run \
   --publish=8080:8080 \
   --detach=true \
   --name=cadvisor \
-  adomenech73/cadvisor-aarch64
+  cadvisor-aarch64
 ´´´
