@@ -1,6 +1,6 @@
 # cadvisor
 
-This is a 34Mb aarch64 alpine image where is loaded a previously compiled binary for google cadvisor as explained here: [cadvisor build](https://github.com/google/cadvisor/blob/master/docs/development/build.md)
+This is a ~36Mb aarch64 alpine image where is loaded a previously compiled binary for google cadvisor as explained here: [cadvisor build](https://github.com/google/cadvisor/blob/master/docs/development/build.md)
 
 Because the Alpine C library is based in uClibc / musl it can get problems linking the library with dynamic compilation as happens to be with cAdvisor.
 
@@ -42,5 +42,5 @@ docker run \
   --publish=8080:8080 \
   --detach=true \
   --name=cadvisor \
-  cadvisor-aarch64
+  adomenech73/cadvisor-aarch64
 ´´´

@@ -2,11 +2,11 @@
 
 set -e
 
-cd builder && docker build -t builder . \
-&& docker run --name builder-box -ti -v $(pwd):/go/out builder \
+cd builder && docker build -t cadvisor-builder . \
+&& docker run --name cadvisor-builder-box -ti -v $(pwd):/go/out cadvisor-builder \
 && sudo chown $USER:$USER $(pwd)/cadvisor
 
 
-docker rm -f builder-box
+docker rm -f cadvisor-builder-box
 mv $(pwd)/cadvisor ../
-#docker rmi -f builder
+#docker rmi -f cadvisor-builder

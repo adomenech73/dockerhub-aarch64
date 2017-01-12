@@ -15,8 +15,9 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" "$GOPATH/out"
 WORKDIR $GOPATH
 VOLUME $GOPATH/out
 
+RUN git clone --depth 1 https://github.com/google/cadvisor.git
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-#CMD ["/bin/sh"]
+#CMD ["/bin/bash"]
 
